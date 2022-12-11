@@ -31,19 +31,16 @@ if zoom_id:
                                                    summarization = True, 
                                                    summary_type = 'bullets')
         # print('r7qut7yd9i-8ecb-405a-b3a0-759b894c84b1')
-        st.write('r7qut7yd9i-8ecb-405a-b3a0-759b894c84b1')
+        # st.write(res.get('id'))
         
-        # full_details = assembly_ai.get_transcription_results(res.get('id'), all_details=True)
+        full_details = assembly_ai.get_transcription_results(res.get('id'), 
+                                                             all_details=True)
         # st.json(full_details)
-        full_details = assembly_ai.get_transcription_results('r7qut7yd9i-8ecb-405a-b3a0-759b894c84b1',
-                                                             all_details = True)
+        # full_details = assembly_ai.get_transcription_results('r7qut7yd9i-8ecb-405a-b3a0-759b894c84b1',
+        #                                                      all_details = True)
         st.write('### Summary of the meeting: ')
         for bullet in full_details.get('summary').split('-'):
             st.write(bullet)
         
         st.button('Send Email to Selected Participants')
         st.button('Create Tasks in GitHub')
-        
-        
-        
-        
